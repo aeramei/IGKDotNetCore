@@ -50,16 +50,24 @@ Console.WriteLine("Hello, World!");
 
 
 // Ado.Net Read
- 
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Read(); 
 //adoDotNetExample.Create("author", "title", "content");
 
 //adoDotNetExample.Update(3, "test author", "test title", "test content");
 //adoDotNetExample.Delete(3);
-adoDotNetExample.Edit(3);
-adoDotNetExample.Edit(1); 
+//adoDotNetExample.Edit(3);
+//adoDotNetExample.Edit(1); 
+
+
+IGKDapper igkDapper = new IGKDapper();
+igkDapper.Run();
+
+
 Console.ReadKey();
+
+
 
 
 

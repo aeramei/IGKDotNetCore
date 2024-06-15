@@ -21,8 +21,6 @@ namespace DotNetTrainingBatch4.ConsoleApp
         };
         public void Read()
         {
-       
-           
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
             connection.Open();
@@ -153,3 +151,5 @@ namespace DotNetTrainingBatch4.ConsoleApp
 
     }
 }
+
+
