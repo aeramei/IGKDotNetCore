@@ -61,9 +61,11 @@ Console.WriteLine("Hello, World!");
 //adoDotNetExample.Edit(1); 
 
 
-IGKDapper igkDapper = new IGKDapper();
-igkDapper.Run();
+//IGKDapper igkDapper = new IGKDapper();
+//igkDapper.Run();
 
+EFCoreExample eFCoreExample = new EFCoreExample();
+eFCoreExample.Run();
 
 Console.ReadKey();
 

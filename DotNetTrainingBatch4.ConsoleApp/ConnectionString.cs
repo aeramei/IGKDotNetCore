@@ -14,7 +14,8 @@ namespace DotNetTrainingBatch4.ConsoleApp
             DataSource = "AERA\\SQLEXPRESS",
             InitialCatalog = "DotNetTrainingBatch4",
             UserID = "sa",
-            Password = "ingyinkhine@123"
+            Password = "ingyinkhine@123",
+            TrustServerCertificate = true
         };
     }
 }
