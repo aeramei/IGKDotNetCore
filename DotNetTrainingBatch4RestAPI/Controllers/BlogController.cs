@@ -1,15 +1,16 @@
-﻿using DotNetTrainingBatch4RestAPI.Models;
+﻿using IGK.DotNetTrainingBatch4RestAPI.Db;
+using IGK.DotNetTrainingBatch4RestAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata;
 
-namespace DotNetTrainingBatch4RestAPI.Controllers
+namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
 {
 
     // https://localhosts:3000 => domain url
     //api/blog => endpoint
-     
+
     [Route("api/[controller]")]
     [ApiController]
     public class BlogController : ControllerBase
@@ -96,7 +97,7 @@ namespace DotNetTrainingBatch4RestAPI.Controllers
                 item.BlogContent = blog.BlogContent;
             }
 
-           
+
             var result = _context.SaveChanges();
 
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
@@ -118,7 +119,7 @@ namespace DotNetTrainingBatch4RestAPI.Controllers
 
             var result = _context.SaveChanges();
 
-            string message = result > 0 ?" Deleting Successful." : "Deleting Failed.";
+            string message = result > 0 ? " Deleting Successful." : "Deleting Failed.";
             Console.WriteLine(message);
 
 

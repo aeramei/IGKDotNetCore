@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4RestAPI
+namespace IGK.DotNetTrainingBatch4RestAPI
 {
     internal static class ConnectionString
     {

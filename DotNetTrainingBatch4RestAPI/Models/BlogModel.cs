@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4RestAPI.Models;
+namespace IGK.DotNetTrainingBatch4RestAPI.Models;
 
 [Table("Tbl_Blog")]
 public class BlogModel

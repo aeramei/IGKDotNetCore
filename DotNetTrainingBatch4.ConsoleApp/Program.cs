@@ -1,4 +1,5 @@
-﻿using DotNetTrainingBatch4.ConsoleApp;
+﻿using IGK.DotNetTrainingBatch4.ConsoleApp;
+using IGK.DotNetTrainingBatch4.ConsoleApp.ExampleEFCore;
 
 Console.WriteLine("Hello, World!");
 

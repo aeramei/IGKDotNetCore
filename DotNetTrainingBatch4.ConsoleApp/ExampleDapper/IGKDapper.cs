@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using DotNetTrainingBatch4.ConsoleApp.DTOS;
-using DotNetTrainingBatch4.ConsoleApp.Services;
+using IGK.DotNetTrainingBatch4.ConsoleApp.DTOS;
+using IGK.DotNetTrainingBatch4.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +10,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp.ExampleDapper
+namespace IGK.DotNetTrainingBatch4.ConsoleApp.ExampleDapper
 {
     internal class IGKDapper
     {

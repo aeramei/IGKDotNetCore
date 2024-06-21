@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp.DTOS
+namespace IGK.DotNetTrainingBatch4.ConsoleApp.DTOS
 {
     [Table("Tbl_Blog")]
     public class BlogDTO

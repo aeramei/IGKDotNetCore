@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Metadata;
 
-namespace DotNetTrainingBatch4.ConsoleApp.ExampleAdoDotNet
+namespace IGK.DotNetTrainingBatch4.ConsoleApp.ExampleAdoDotNet
 {
     internal class AdoDotNetExample
     {

@@ -1,4 +1,4 @@
-﻿using DotNetTrainingBatch4.ConsoleApp.DTOS;
+﻿using IGK.DotNetTrainingBatch4.ConsoleApp.DTOS;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp.ExampleEFCore
+namespace IGK.DotNetTrainingBatch4.ConsoleApp.ExampleEFCore
 {
 
     internal class EFCoreExample
