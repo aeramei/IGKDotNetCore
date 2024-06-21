@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Metadata;
 
-namespace DotNetTrainingBatch4.ConsoleApp
+namespace DotNetTrainingBatch4.ConsoleApp.ExampleAdoDotNet
 {
     internal class AdoDotNetExample
     {
@@ -36,7 +36,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
             connection.Close();
             Console.WriteLine("Close");
 
-          
+
             foreach (DataRow dr in dt.Rows)
             {
                 Console.WriteLine("Blog ID => " + dr["BlogID"]);
@@ -71,13 +71,13 @@ namespace DotNetTrainingBatch4.ConsoleApp
             }
 
             DataRow dr = dt.Rows[0];
-            
-                Console.WriteLine("Blog ID => " + dr["BlogID"]);
-                Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
-                Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
-                Console.WriteLine("Blog Conetnt => " + dr["BlogContent"]);
-                Console.WriteLine("------------------------------------------");
-            
+
+            Console.WriteLine("Blog ID => " + dr["BlogID"]);
+            Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
+            Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
+            Console.WriteLine("Blog Conetnt => " + dr["BlogContent"]);
+            Console.WriteLine("------------------------------------------");
+
 
         }
 
@@ -96,10 +96,10 @@ namespace DotNetTrainingBatch4.ConsoleApp
            ,@BlogTitle 
            ,@BlogContent)";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogAuthor" , author);
-            cmd.Parameters.AddWithValue("@BlogTitle" , title);  
-            cmd.Parameters.AddWithValue("@BlogContent" , content);
-            int result =   cmd.ExecuteNonQuery();
+            cmd.Parameters.AddWithValue("@BlogAuthor", author);
+            cmd.Parameters.AddWithValue("@BlogTitle", title);
+            cmd.Parameters.AddWithValue("@BlogContent", content);
+            int result = cmd.ExecuteNonQuery();
 
             connection.Close();
 
@@ -107,7 +107,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
             Console.WriteLine(message);
         }
 
-        public void Update(int id , string author, string title,  string content)
+        public void Update(int id, string author, string title, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -119,7 +119,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
  WHERE BlogID = @BlogID";
 
             SqlCommand cmd = new SqlCommand(query, connection);
-            
+
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
             cmd.Parameters.AddWithValue("@BlogTitle", title);
             cmd.Parameters.AddWithValue("@BlogContent", content);

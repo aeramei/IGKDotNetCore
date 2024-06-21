@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DotNetTrainingBatch4.ConsoleApp.DTOS;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp
+namespace DotNetTrainingBatch4.ConsoleApp.ExampleEFCore
 {
 
     internal class EFCoreExample
@@ -18,12 +19,12 @@ namespace DotNetTrainingBatch4.ConsoleApp
             //  Edit(3);
             // Create("author", "title", "content");
             // Update(1003, " author Ingyin Khine ", "test title", "test content");
-            Delete (1003);
+            Delete(1003);
         }
 
         private void Read()
         {
-           
+
             var lst = db.Blogs.ToList();
             foreach (BlogDTO item in lst)
             {
@@ -35,9 +36,9 @@ namespace DotNetTrainingBatch4.ConsoleApp
             }
         }
 
-       private void Edit(int id)
+        private void Edit(int id)
         {
-           var item =  db.Blogs.FirstOrDefault(x => x.BlogID == id);
+            var item = db.Blogs.FirstOrDefault(x => x.BlogID == id);
             if (item is null)
             {
                 Console.WriteLine("No Data Found.");
@@ -60,7 +61,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
                 BlogContent = content,
             };
 
-            db.Blogs.Add(item); 
+            db.Blogs.Add(item);
             int result = db.SaveChanges();
 
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
@@ -78,7 +79,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
             }
 
             item.BlogAuthor = author;
-            item.BlogTitle = title; 
+            item.BlogTitle = title;
             item.BlogContent = content;
 
             int result = db.SaveChanges();
@@ -104,5 +105,5 @@ namespace DotNetTrainingBatch4.ConsoleApp
             Console.WriteLine(message);
         }
 
-        }
+    }
 }

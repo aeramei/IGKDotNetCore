@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using DotNetTrainingBatch4.ConsoleApp.DTOS;
+using DotNetTrainingBatch4.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +10,11 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetTrainingBatch4.ConsoleApp
+namespace DotNetTrainingBatch4.ConsoleApp.ExampleDapper
 {
     internal class IGKDapper
     {
-        public void Run() 
+        public void Run()
         {
             // Read();
             // Edit(1);
@@ -20,13 +22,13 @@ namespace DotNetTrainingBatch4.ConsoleApp
 
             //Create("author", "title", "content");
             //Update (2, " author Ingyin ", "test title", "test content");
-            Delete (2);
+            Delete(2);
         }
 
         public void Read()
         {
             using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-           List<BlogDTO> lst =  db.Query<BlogDTO>( "select * from Tbl_Blog").ToList();
+            List<BlogDTO> lst = db.Query<BlogDTO>("select * from Tbl_Blog").ToList();
 
             foreach (BlogDTO item in lst)
             {
@@ -39,12 +41,12 @@ namespace DotNetTrainingBatch4.ConsoleApp
 
         }
 
-        private void Edit (int id)
+        private void Edit(int id)
         {
-            using IDbConnection db = new SqlConnection (ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-            var item = db.Query<BlogDTO> ("select * from Tbl_Blog where blogid = @BlogID", new BlogDTO { BlogID = id}). FirstOrDefault();
+            using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
+            var item = db.Query<BlogDTO>("select * from Tbl_Blog where blogid = @BlogID", new BlogDTO { BlogID = id }).FirstOrDefault();
 
-            if(item is null) // like ==
+            if (item is null) // like ==
             {
                 Console.WriteLine("No data Found");
                 return;
@@ -76,7 +78,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
            ,@BlogContent)";
 
             using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-           int result =  db.Execute(query, item);
+            int result = db.Execute(query, item);
 
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
@@ -87,7 +89,7 @@ namespace DotNetTrainingBatch4.ConsoleApp
         {
             var item = new BlogDTO
             {
-                BlogID = id,    
+                BlogID = id,
                 BlogAuthor = author,
                 BlogTitle = title,
                 BlogContent = content,
@@ -125,3 +127,4 @@ namespace DotNetTrainingBatch4.ConsoleApp
         }
     }
 }
+
