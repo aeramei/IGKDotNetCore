@@ -63,7 +63,7 @@ namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
             var item = FindbyID(id);
             if(item is null)
             {
-                return NotFound("No Datat Found");
+                return NotFound("No Data Found");
             }
 
             blog.BlogID = id;
