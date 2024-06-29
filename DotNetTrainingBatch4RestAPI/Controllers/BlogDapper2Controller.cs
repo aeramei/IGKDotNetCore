@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DotNetTrainingBatch4Share;
 using IGK.DotNetTrainingBatch4RestAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,14 +11,18 @@ namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogDapperController2 : ControllerBase
+    public class BlogDapper2Controller : ControllerBase
     {
+
+        private readonly DapperService _dapperService = new DapperService(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
+
+
         [HttpGet]
         public IActionResult GetBlogs()
         {
             string query = "select * from Tbl_Blog";
-            using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-            List<BlogModel> lst = db.Query<BlogModel>(query).ToList();
+            var lst = _dapperService.Query<BlogModel>(query);
+
             return Ok(lst);
         }
 
@@ -49,8 +54,7 @@ namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
            ,@BlogTitle 
            ,@BlogContent)";
 
-            using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, blog);
+            int result = _dapperService.Execute(query, blog);
 
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             return Ok(message);
@@ -73,8 +77,7 @@ namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
       ,[BlogContent] = @BlogContent
  WHERE BlogID = @BlogID";
 
-            using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, blog);
+            int result = _dapperService.Execute(query, blog);
 
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
             return Ok(message);
@@ -117,8 +120,7 @@ namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
   SET {conditions}
  WHERE BlogID = @BlogID";
 
-            using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, blog);
+            int result = _dapperService.Execute(query, blog);
 
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
             return Ok(message);
@@ -145,8 +147,7 @@ namespace IGK.DotNetTrainingBatch4RestAPI.Controllers
         private BlogModel? FindbyID(int id)  
         {
             string query = "select * from Tbl_Blog where blogid = @BlogID";
-            using IDbConnection db = new SqlConnection(ConnectionString.SqlConnectionStringBuilder.ConnectionString);
-            var item = db.Query<BlogModel>(query, new BlogModel { BlogID = id }).FirstOrDefault();
+            var item = _dapperService.QueryFirstOrDefault <BlogModel>(query, new BlogModel { BlogID = id });
             return item;
         }
     }
