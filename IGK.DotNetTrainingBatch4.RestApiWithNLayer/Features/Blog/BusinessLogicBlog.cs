@@ -43,6 +43,11 @@ namespace IGK.DotNetTrainingBatch4.RestApiWithNLayer.Features.Blog
             var result = _blogDataAccess.DeleteBlog(id);
             return result;
         }
+
+        internal int PatchBlog(int id, BlogModel blog)
+        {
+            throw new NotImplementedException();
+        }
     } 
 
 }

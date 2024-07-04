@@ -67,31 +67,12 @@ namespace IGK.DotNetTrainingBatch4.RestApiWithNLayer.Features.Blog
             var item = _businessLogicBlog.GetBlogs(id);
             if (item is null)
             {
-                return NotFound("No data Found");
+                return NotFound("Data not found ");
             }
 
+            var result = _businessLogicBlog.PatchBlog(id, blog);
 
-            if (!string.IsNullOrEmpty(blog.BlogAuthor))
-            {
-                item.BlogAuthor = blog.BlogAuthor;
-            }
-
-            if (!string.IsNullOrEmpty(blog.BlogTitle))
-            {
-                item.BlogTitle = blog.BlogTitle;
-            }
-
-            if (!string.IsNullOrEmpty(blog.BlogContent))
-            {
-                item.BlogContent = blog.BlogContent;
-            }
-
-
-            var result = _businessLogicBlog.SaveChanges();
-
-            string message = result > 0 ? "Updating Successful." : "Updating Failed.";
-            Console.WriteLine(message);
-
+            string message = result > 0 ? "Update Successfully." : "Update Fail";
             return Ok(message);
         }
 
