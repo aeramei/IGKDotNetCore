@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGK.DotNetTrainingBatch4Res
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch4Share", "DotNetTrainingBatch4Share\DotNetTrainingBatch4Share.csproj", "{04368F21-56E6-4464-838B-C1491A998350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGK.DotNetTrainingBatch4.RestApiWithNLayer", "IGK.DotNetTrainingBatch4.RestApiWithNLayer\IGK.DotNetTrainingBatch4.RestApiWithNLayer.csproj", "{AB5D0B4C-D1F0-4E7E-9A6D-82A525A4CDA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IGK.DotNetTrainingBatch4.RestApiWithNLayer", "IGK.DotNetTrainingBatch4.RestApiWithNLayer\IGK.DotNetTrainingBatch4.RestApiWithNLayer.csproj", "{AB5D0B4C-D1F0-4E7E-9A6D-82A525A4CDA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGKDotNetTrainingBatch4ConsoleAppHTTPClient", "IGKDotNetTrainingBatch4ConsoleAppHTTPClient\IGKDotNetTrainingBatch4ConsoleAppHTTPClient.csproj", "{B9C842A6-263A-4DBD-9125-ADFA365A62AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{AB5D0B4C-D1F0-4E7E-9A6D-82A525A4CDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB5D0B4C-D1F0-4E7E-9A6D-82A525A4CDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB5D0B4C-D1F0-4E7E-9A6D-82A525A4CDA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C842A6-263A-4DBD-9125-ADFA365A62AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C842A6-263A-4DBD-9125-ADFA365A62AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C842A6-263A-4DBD-9125-ADFA365A62AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C842A6-263A-4DBD-9125-ADFA365A62AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
